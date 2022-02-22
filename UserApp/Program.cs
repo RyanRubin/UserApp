@@ -1,8 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using UserApp.Db;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<UserAppDbContext>(opt => opt.UseInMemoryDatabase("UserAppDb"));
 
 var app = builder.Build();
 

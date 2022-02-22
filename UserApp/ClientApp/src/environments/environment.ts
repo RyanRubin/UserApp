@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  userServiceUrl: 'http://localhost:8080/users',
-  userGroupServiceUrl: 'http://localhost:8080/user-groups'
+  userServiceUrl: 'http://localhost:7018/user',
+  userGroupServiceUrl: 'http://localhost:7018/user-group'
 };
 
 /*
