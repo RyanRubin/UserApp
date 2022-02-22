@@ -15,6 +15,9 @@ import { AppComponent } from './app.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
+      { path: '', loadChildren: () => import('./user-app/home/home.module').then(m => m.HomeModule) },
+      { path: 'users', loadChildren: () => import('./user-app/users/users.module').then(m => m.UsersModule) },
+      { path: 'user-groups', loadChildren: () => import('./user-app/user-groups/user-groups.module').then(m => m.UserGroupsModule) }
     ])
   ],
   providers: [],
