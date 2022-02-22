@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
-import { UserGroupsComponent } from './user-groups.component';
+import { UserGroupListComponent } from './user-group-list/user-group-list.component';
+import { UserGroupDetailsComponent } from './user-group-details/user-group-details.component';
 
 
 const routes: Routes = [
-  { path: '', component: UserGroupsComponent }
+  { path: '', component: UserGroupListComponent }
 ];
 
 @NgModule({
   declarations: [
-    UserGroupsComponent
+    UserGroupListComponent,
+    UserGroupDetailsComponent
   ],
   imports: [
     CommonModule,
