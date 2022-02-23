@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { ResponseJson } from '../models/response-json';
 import { User } from '../models/user';
+import { Util } from '../util';
 
 @Injectable({
   providedIn: 'root'
@@ -12,22 +13,22 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getAll() {
-    return this.http.get<ResponseJson>(environment.userServiceUrl);
+    return Util.toPromise(this.http.get<ResponseJson>(environment.userServiceUrl), true);
   }
 
   get(id: number) {
-    return this.http.get<ResponseJson>(`${environment.userServiceUrl}/${id}`);
+    return Util.toPromise(this.http.get<ResponseJson>(`${environment.userServiceUrl}/${id}`));
   }
 
   create(user: User) {
-    return this.http.post<ResponseJson>(environment.userServiceUrl, user);
+    return Util.toPromise(this.http.post<ResponseJson>(environment.userServiceUrl, user));
   }
 
   update(id: number, user: User) {
-    return this.http.put<ResponseJson>(`${environment.userServiceUrl}/${id}`, user);
+    return Util.toPromise(this.http.put<ResponseJson>(`${environment.userServiceUrl}/${id}`, user));
   }
 
   delete(id: number) {
-    return this.http.delete<ResponseJson>(`${environment.userServiceUrl}/${id}`);
+    return Util.toPromise(this.http.delete<ResponseJson>(`${environment.userServiceUrl}/${id}`));
   }
 }

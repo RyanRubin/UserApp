@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { ResponseJson } from '../models/response-json';
 import { UserGroup } from '../models/user-group';
+import { Util } from '../util';
 
 @Injectable({
   providedIn: 'root'
@@ -12,22 +13,22 @@ export class UserGroupService {
   constructor(private http: HttpClient) { }
 
   getAll() {
-    return this.http.get<ResponseJson>(environment.userGroupServiceUrl);
+    return Util.toPromise(this.http.get<ResponseJson>(environment.userGroupServiceUrl), true);
   }
 
   get(id: number) {
-    return this.http.get<ResponseJson>(`${environment.userGroupServiceUrl}/${id}`);
+    return Util.toPromise(this.http.get<ResponseJson>(`${environment.userGroupServiceUrl}/${id}`));
   }
 
   create(userGroup: UserGroup) {
-    return this.http.post<ResponseJson>(environment.userGroupServiceUrl, userGroup);
+    return Util.toPromise(this.http.post<ResponseJson>(environment.userGroupServiceUrl, userGroup));
   }
 
   update(id: number, userGroup: UserGroup) {
-    return this.http.put<ResponseJson>(`${environment.userGroupServiceUrl}/${id}`, userGroup);
+    return Util.toPromise(this.http.put<ResponseJson>(`${environment.userGroupServiceUrl}/${id}`, userGroup));
   }
 
   delete(id: number) {
-    return this.http.delete<ResponseJson>(`${environment.userGroupServiceUrl}/${id}`);
+    return Util.toPromise(this.http.delete<ResponseJson>(`${environment.userGroupServiceUrl}/${id}`));
   }
 }

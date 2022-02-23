@@ -46,6 +46,7 @@ namespace UserApp.Biz
             {
                 user.Name = userInput.Name;
                 user.Email = userInput.Email;
+                userAppDbContext.SaveChanges();
             }
             return user;
         }
@@ -66,7 +67,7 @@ namespace UserApp.Biz
             {
                 return "Name is required.";
             }
-            if (string.IsNullOrWhiteSpace(user.Name))
+            if (string.IsNullOrWhiteSpace(user.Email))
             {
                 return "Email is required.";
             }

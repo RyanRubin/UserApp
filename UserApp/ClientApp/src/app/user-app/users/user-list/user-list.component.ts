@@ -11,13 +11,13 @@ import { UserService } from '../../shared/services/user.service';
 })
 export class UserListComponent implements OnInit {
 
-  response: Observable<ResponseJson> = new Observable<ResponseJson>();
+  users: User[] = [];
   selectedUser: User = new User();
 
   constructor(private userService: UserService) { }
 
-  ngOnInit(): void {
-    this.getAllUsers();
+  async ngOnInit(): Promise<void> {
+    await this.getAllUsers();
   }
 
   selectUser(user: User): void {
@@ -28,13 +28,13 @@ export class UserListComponent implements OnInit {
     this.selectedUser = new User();
   }
 
-  userChanged(): void {
-    this.getAllUsers();
+  async userChanged(): Promise<void> {
+    await this.getAllUsers();
     this.newUser();
   }
 
-  getAllUsers(): void {
-    this.response = this.userService.getAll();
+  async getAllUsers(): Promise<void> {
+    this.users = await this.userService.getAll();
   }
 
 }

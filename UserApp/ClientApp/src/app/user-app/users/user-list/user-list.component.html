@@ -14,7 +14,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let user of (response|async)?.returnValue" [class.table-primary]="user.id === selectedUser.id" style="cursor: pointer;" (click)="selectUser(user)">
+        <tr *ngFor="let user of users" [class.table-primary]="user.id === selectedUser.id" style="cursor: pointer;" (click)="selectUser(user)">
           <td>{{user.id}}</td>
           <td>{{user.name}}</td>
           <td>{{user.email|lowercase}}</td>

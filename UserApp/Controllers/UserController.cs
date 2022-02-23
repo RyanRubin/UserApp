@@ -26,7 +26,7 @@ namespace UserApp.Controllers
             }
             catch (Exception ex)
             {
-                response.ErrorMessage = "" + ex;
+                response.ErrorMessage = ex.Message;
             }
             return response;
         }
@@ -41,13 +41,13 @@ namespace UserApp.Controllers
             }
             catch (Exception ex)
             {
-                response.ErrorMessage = "" + ex;
+                response.ErrorMessage = ex.Message;
             }
             return response;
         }
 
         [HttpPost]
-        public ResponseJson Post(User user)
+        public ResponseJson Post([FromBody] User user)
         {
             ResponseJson response = new ResponseJson();
             try
@@ -56,13 +56,13 @@ namespace UserApp.Controllers
             }
             catch (Exception ex)
             {
-                response.ErrorMessage = "" + ex;
+                response.ErrorMessage = ex.Message;
             }
             return response;
         }
 
         [HttpPut("{id}")]
-        public ResponseJson Put(int id, User user)
+        public ResponseJson Put(int id, [FromBody] User user)
         {
             ResponseJson response = new ResponseJson();
             try
@@ -71,7 +71,7 @@ namespace UserApp.Controllers
             }
             catch (Exception ex)
             {
-                response.ErrorMessage = "" + ex;
+                response.ErrorMessage = ex.Message;
             }
             return response;
         }
@@ -86,7 +86,7 @@ namespace UserApp.Controllers
             }
             catch (Exception ex)
             {
-                response.ErrorMessage = "" + ex;
+                response.ErrorMessage = ex.Message;
             }
             return response;
         }
