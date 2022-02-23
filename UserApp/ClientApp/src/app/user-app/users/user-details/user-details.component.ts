@@ -11,7 +11,6 @@ export class UserDetailsComponent implements OnInit {
 
   @Input() user: User = new User();
   @Output() userChanged = new EventEmitter();
-  date: Date = new Date();
 
   constructor(private userService: UserService) { }
 

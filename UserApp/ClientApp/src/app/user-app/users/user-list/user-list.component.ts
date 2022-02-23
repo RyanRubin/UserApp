@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { ResponseJson } from '../../shared/models/response-json';
 import { User } from '../../shared/models/user';
 import { UserService } from '../../shared/services/user.service';
 

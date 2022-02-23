@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { UserGroupListComponent } from './user-group-list/user-group-list.component';
 import { UserGroupDetailsComponent } from './user-group-details/user-group-details.component';
+import { FormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
@@ -16,7 +17,8 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule
   ]
 })
 export class UserGroupsModule { }
