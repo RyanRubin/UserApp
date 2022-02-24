@@ -5,22 +5,24 @@
 </div>
 <div class="row mt-3">
   <div class="col">
-    <table class="table table-bordered" style="table-layout: fixed;">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Email</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let userGroup of userGroups" [class.table-primary]="userGroup.id === selectedUserGroup.id" style="cursor: pointer;" (click)="selectUserGroup(userGroup)">
-          <td>{{userGroup.id}}</td>
-          <td>{{userGroup.name}}</td>
-          <td>{{userGroup.email|lowercase}}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let userGroup of userGroups" [class.table-primary]="userGroup.id === selectedUserGroup.id" style="cursor: pointer;" (click)="selectUserGroup(userGroup)">
+            <td>{{userGroup.id}}</td>
+            <td>{{userGroup.name}}</td>
+            <td>{{userGroup.email|lowercase}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 <div class="row mt-3">

@@ -5,22 +5,24 @@
 </div>
 <div class="row mt-3">
   <div class="col">
-    <table class="table table-bordered" style="table-layout: fixed;">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Email</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let user of users" [class.table-primary]="user.id === selectedUser.id" style="cursor: pointer;" (click)="selectUser(user)">
-          <td>{{user.id}}</td>
-          <td>{{user.name}}</td>
-          <td>{{user.email|lowercase}}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users" [class.table-primary]="user.id === selectedUser.id" style="cursor: pointer;" (click)="selectUser(user)">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email|lowercase}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
 <div class="row mt-3">
