@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using UserApp.Biz;
-using UserApp.Db;
 using UserApp.Models;
 
 namespace UserApp.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("user")]
     public class UserController : ControllerBase
     {
         private readonly IUserBiz userBiz;
