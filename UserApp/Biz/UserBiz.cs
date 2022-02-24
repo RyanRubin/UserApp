@@ -3,7 +3,7 @@ using UserApp.Models;
 
 namespace UserApp.Biz
 {
-    public class UserBiz
+    public class UserBiz : IUserBiz
     {
         private readonly UserAppDbContext userAppDbContext;
 

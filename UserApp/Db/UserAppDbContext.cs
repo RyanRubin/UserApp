@@ -7,7 +7,7 @@ namespace UserApp.Db
     {
         public UserAppDbContext(DbContextOptions<UserAppDbContext> options) : base(options) { }
 
-        public DbSet<User> Users { get; set; }
-        public DbSet<UserGroup> UserGroups { get; set; }
+        public DbSet<User> Users => Set<User>();
+        public DbSet<UserGroup> UserGroups => Set<UserGroup>();
     }
 }

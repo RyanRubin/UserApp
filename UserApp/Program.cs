@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using UserApp.Biz;
 using UserApp.Db;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +17,8 @@ builder.Services.AddCors(opt =>
 });
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<UserAppDbContext>(opt => opt.UseInMemoryDatabase("UserAppDb"));
+builder.Services.AddScoped<IUserBiz, UserBiz>();
+builder.Services.AddScoped<IUserGroupBiz, UserGroupBiz>();
 
 var app = builder.Build();
 

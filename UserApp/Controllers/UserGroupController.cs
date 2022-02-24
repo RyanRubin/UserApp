@@ -9,11 +9,11 @@ namespace UserApp.Controllers
     [Route("[controller]")]
     public class UserGroupController
     {
-        private readonly UserGroupBiz userGroupBiz;
+        private readonly IUserGroupBiz userGroupBiz;
 
-        public UserGroupController(UserAppDbContext userAppDbContext)
+        public UserGroupController(IUserGroupBiz userGroupBiz)
         {
-            this.userGroupBiz = new UserGroupBiz(userAppDbContext);
+            this.userGroupBiz = userGroupBiz;
         }
 
         [HttpGet]
